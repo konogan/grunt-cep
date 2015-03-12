@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * 	http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -147,9 +147,11 @@ module.exports = function (grunt)
                     folder_apps = '/Applications';
 
                     if (launch_config.family === 'CC')
-                        folder_servicemgr = '/Library/Application\ Support/Adobe/CEPServiceManager4/extensions';
-                    else
-                        folder_servicemgr = '/Library/Application\ Support/Adobe/CEP/extensions';
+                        folder_servicemgr = '/Library/Application Support/Adobe/CEPServiceManager4/extensions';
+                    else{
+                        folder_servicemgr = '/Library/Application Support/Adobe/CEP/extensions';
+                        grunt.log.writeln().writeln('ICI --> '+ folder_servicemgr);
+                    }
                 }
 
                 // Extension install path
