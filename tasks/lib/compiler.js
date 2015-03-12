@@ -314,7 +314,7 @@ module.exports = function (grunt)
                 {
                     options = {
                         cmd: 'open',
-                        args: ['-F', '-n', launch_config.app_bin],
+                        args: ['-F', '-n', "'"+launch_config.app_bin+"'"],
                     };
                 }
                 else
