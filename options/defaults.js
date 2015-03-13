@@ -38,13 +38,13 @@ module.exports =
     source: 'src',
 
 
-    /** 
+    /**
      * Bundle
-     * 
+     *
      * Contains information about the extension bundle, that is the container
      * for all the extensions specified below.
      * See: http://www.adobe.com/devnet/creativesuite/articles/multiple-extensions.html
-     * 
+     *
      * If required data is not specified here, grunt-cep will try to load it from the first
      * extension specified in the 'extensions' array.
      */
@@ -71,7 +71,7 @@ module.exports =
         update_url: '',
 
         // Description of the extension (HTML)
-        // This is only displayed if an URL is not entered in 'description_href' 
+        // This is only displayed if an URL is not entered in 'description_href'
         description: '',
 
         // A URL that points to a HTML file containing the description displayed in the Extension
@@ -86,9 +86,9 @@ module.exports =
     },
 
 
-    /** 
+    /**
      * Extensions
-     * 
+     *
      * An array containing information about each single extension that will be added
      * to the bundle.
      */
@@ -132,13 +132,13 @@ module.exports =
     }],
 
 
-    /** 
+    /**
      * Builds
-     * 
+     *
      * A list of individual builds that should be executed, each one
-     * resulting in a single .zxp that will be bundled in the final *.zxp 
+     * resulting in a single .zxp that will be bundled in the final *.zxp
      * installer. This is useful for custom configuration by product.
-     * 
+     *
      * Each object in this list extends the main project configuration,
      * giving you the ability to override base configuration values.
      */
@@ -159,9 +159,9 @@ module.exports =
     ],
 
 
-    /** 
+    /**
      * Launch
-     * 
+     *
      * Options used to launch debug in host application.
      */
     launch: {
@@ -181,9 +181,9 @@ module.exports =
 
 
 
-    /** 
+    /**
      * Package
-     * 
+     *
      * Options related to bundle packaging and distribution.
      */
     'package': {
