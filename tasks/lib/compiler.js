@@ -29,7 +29,7 @@ module.exports = function (grunt)
     {
         var tasks = [];
         grunt.log.writeln().writeln(('Compiling bundle for Adobe ' + build.products.join(', ').cyan + ' - ' + build.families.join(', ').cyan + '...').bold);
-
+        var  exec = require('child_process').exec;
         tasks.push(
             /**
              * Do some cleanup.
@@ -59,8 +59,9 @@ module.exports = function (grunt)
                 // Copy all the content of the source folder over to the output folder
                 var message = 'Copying ' + build.source.cyan + ' folder...';
                 grunt.verbose.writeln(message).or.write(message);
+                //cep.utils.copy({ cwd: build.source }, build.staging + '/', '**/*.*');
+                exec('cp -Ri ' + build.source +'/ '+build.staging + '/');
 
-                cep.utils.copy({ cwd: build.source }, build.staging + '/', '**/*.*');
                 grunt.verbose.or.ok();
                 callback();
             },
@@ -147,11 +148,9 @@ module.exports = function (grunt)
                     folder_apps = '/Applications';
 
                     if (launch_config.family === 'CC')
-                        folder_servicemgr = '/Library/Application Support/Adobe/CEPServiceManager4/extensions';
-                    else{
-                        folder_servicemgr = '/Library/Application Support/Adobe/CEP/extensions';
-                        grunt.log.writeln().writeln('ICI --> '+ folder_servicemgr);
-                    }
+                        folder_servicemgr = process.env['HOME'] + '/Library/Application Support/Adobe/CEPServiceManager4/extensions';
+                    else
+                        folder_servicemgr = process.env['HOME'] + '/Library/Application\ Support/Adobe/CEP/extensions';
                 }
 
                 // Extension install path
@@ -293,13 +292,9 @@ module.exports = function (grunt)
                     grunt.file.delete(launch_config.install_path, { force: true });
 
                 // Copy files over
-                cep.utils.copy({ 'cwd': build.staging },
-                    launch_config.install_path,
-                    '**/*.*');
 
-                cep.utils.copy({ 'cwd': build.staging },
-                    launch_config.install_path,
-                    '**/.*');
+                var cmd = 'cp -Ri "' + build.staging +'"  "'+launch_config.install_path +'"';
+                exec(cmd);
 
                 grunt.verbose.or.ok();
                 callback();
@@ -329,6 +324,7 @@ module.exports = function (grunt)
 
                 grunt.verbose.writeln((options.cmd + ' ' + options.args.join(' ')).magenta)
                 .or.write('Starting host application...');
+
 
                 exec(options.cmd + ' ' + options.args.join(' '), function (error, result, code)
                 {

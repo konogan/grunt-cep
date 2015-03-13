@@ -36,7 +36,7 @@ module.exports = function (grunt)
         }
         else
         {
-            exec_name = 'ccextensionsmac.dmg';
+            exec_name = 'ZXPSignCmd';
         }
 
         return path.resolve(__dirname, '../../bin/' + exec_name);
@@ -75,7 +75,7 @@ module.exports = function (grunt)
                 grunt.log.error(result);
                 grunt.fatal('An error occurred when generating the self-signed certificate.');
             }
-            
+
             callback(error, result);
         });
     };
