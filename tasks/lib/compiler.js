@@ -60,10 +60,14 @@ module.exports = function (grunt)
                 var message = 'Copying ' + build.source.cyan + ' folder...';
                 grunt.verbose.writeln(message).or.write(message);
                 //cep.utils.copy({ cwd: build.source }, build.staging + '/', '**/*.*');
-                exec('cp -Ri ' + build.source +'/ '+build.staging + '/');
-
-                grunt.verbose.or.ok();
-                callback();
+                //
+                //
+                //
+                var cmd = 'cp -Ri ' + build.source +'/ '+build.staging + '/';
+                exec(cmd, function(error, result, code) {
+                    grunt.verbose.or.ok();
+                    callback();
+                });
             },
 
             /**
@@ -294,10 +298,12 @@ module.exports = function (grunt)
                 // Copy files over
 
                 var cmd = 'cp -Ri "' + build.staging +'"  "'+launch_config.install_path +'"';
-                exec(cmd);
-
-                grunt.verbose.or.ok();
+                exec(cmd, function(error, result, code) {
+                    grunt.verbose.or.ok();
                 callback();
+                });
+
+
             },
 
             /**
