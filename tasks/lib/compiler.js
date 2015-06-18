@@ -160,7 +160,8 @@ module.exports = function(grunt)
                 // Application folder
                 var folder_family = {
                     'CC': 'CC',
-                    'CC2014': 'CC 2014'
+                    'CC2014': 'CC 2014',
+                    'CC2015': 'CC 2015'
                 };
 
                 var folder_name = launch_config.host.hasOwnProperty('folder') ? launch_config.host.folder : '/Adobe ' + launch_config.host.name + ' ' + folder_family[launch_config.family];
@@ -239,7 +240,8 @@ module.exports = function(grunt)
                 {
                     PLISTS = {
                         'CC': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.4.plist'),
-                        'CC2014': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.5.plist')
+                        'CC2014': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.5.plist'),
+                        'CC2015': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSX6.plist')
                     };
 
                     if (!PLISTS.hasOwnProperty(host_family))
@@ -254,7 +256,8 @@ module.exports = function(grunt)
                 {
                     PLISTS = {
                         'CC': 'HKEY_CURRENT_USER\\Software\\Adobe\\CSXS.4\\',
-                        'CC2014': 'HKEY_CURRENT_USER\\Software\\Adobe\\CSXS.5\\'
+                        'CC2014': 'HKEY_CURRENT_USER\\Software\\Adobe\\CSXS.5\\',
+                        'CC2015': 'HKEY_CURRENT_USER\\Software\\Adobe\\CSX6\\'
                     };
 
                     if (!PLISTS.hasOwnProperty(host_family))

@@ -154,7 +154,7 @@ module.exports =
             products: [],
 
             // Supported product families
-            families: ['CC2014', 'CC'],
+            families: ['CC2015', 'CC2014', 'CC'],
         },
     ],
 

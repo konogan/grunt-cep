@@ -37,7 +37,7 @@ module.exports = function (grunt)
         product = product.toLowerCase();
 
         if (!family)
-            family = 'CC2014';
+            family = 'CC2015';
 
         if (!HOSTS.hasOwnProperty(family))
             throw new Error('Unknown product family "' + family + '"');
@@ -96,14 +96,14 @@ module.exports = function (grunt)
     // *************************************************************
     // Utils
     var utils = cep.utils = {};
-    
+
     /**
      * Recursive copy utility.
      */
     utils.copy = function (options, dest, patterns)
     {
         options || (options = { });
-        
+
         grunt.file.expand.apply(null, [options, patterns]).forEach(function (file)
         {
             var src = (options.cwd) ? path.join(options.cwd, file) : file;

@@ -1,4 +1,30 @@
 {
+    "CC2015": {
+        "photoshop": {
+            "familyname": "Photoshop",
+            "name": "Photoshop",
+            "ids": [ "PHXS", "PHSP" ],
+            "version": { "min": "16.0", "max": "16.9" },
+            "bin": { "win": "Photoshop.exe", "mac": "Adobe Photoshop CC 2015.app" },
+            "x64": true
+        },
+        "illustrator": {
+            "familyname": "Illustrator",
+            "name": "Illustrator",
+            "ids": [ "ILST" ],
+            "version": { "min": "19.0", "max": "19.9" },
+            "bin": { "win": "Illustrator.exe", "mac": "Adobe Illustrator CC 2015.app" },
+            "x64": true
+        },
+        "indesign": {
+            "familyname": "InDesign",
+            "name": "InDesign",
+            "ids": [ "IDSN" ],
+            "version": { "min": "11.0", "max": "11.9" },
+            "bin": { "win": "InDesign.exe", "mac": "Adobe InDesign CC 2015.app" },
+            "x64": false
+        }
+    },
     "CC2014": {
         "photoshop": {
             "familyname": "Photoshop",
