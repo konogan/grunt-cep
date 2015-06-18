@@ -241,7 +241,7 @@ module.exports = function(grunt)
                     PLISTS = {
                         'CC': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.4.plist'),
                         'CC2014': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.5.plist'),
-                        'CC2015': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSX6.plist')
+                        'CC2015': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS6.plist')
                     };
 
                     if (!PLISTS.hasOwnProperty(host_family))
