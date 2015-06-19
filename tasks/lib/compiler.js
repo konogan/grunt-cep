@@ -239,9 +239,9 @@ module.exports = function(grunt)
                 if (global.IS_MAC)
                 {
                     PLISTS = {
-                        'CC': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.4.plist'),
-                        'CC2014': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS.5.plist'),
-                        'CC2015': path.join(process.env['HOME'], '/Library/Preferences/com.adobe.CSXS6.plist')
+                        'CC': path.join(process.env['HOME'], 'com.adobe.CSXS.4'),
+                        'CC2014': path.join(process.env['HOME'], 'com.adobe.CSXS.5'),
+                        'CC2015': path.join(process.env['HOME'], 'com.adobe.CSXS.6')
                     };
 
                     if (!PLISTS.hasOwnProperty(host_family))
