@@ -239,9 +239,9 @@ module.exports = function(grunt)
                 if (global.IS_MAC)
                 {
                     PLISTS = {
-                        'CC': path.join(process.env['HOME'], 'com.adobe.CSXS.4'),
-                        'CC2014': path.join(process.env['HOME'], 'com.adobe.CSXS.5'),
-                        'CC2015': path.join(process.env['HOME'], 'com.adobe.CSXS.6')
+                        'CC': 'com.adobe.CSXS.4',
+                        'CC2014': 'com.adobe.CSXS.5',
+                        'CC2015': 'com.adobe.CSXS.6'
                     };
 
                     if (!PLISTS.hasOwnProperty(host_family))
@@ -291,12 +291,12 @@ module.exports = function(grunt)
                     // - Kill cfprefsd process. It will restart automatically. Then the update takes effect.
                     // - Restart your Mac, or log out the current user and re-log in.
                      if (global.IS_MAC && true) {
-                        var cmd = 'pkill -9 cfprefsd';
-                        grunt.verbose.writeln((cmd).magenta).or.write('Killing cfprefsd process for Mac 10.9 and higher');
-                        exec(cmd, function(error, result, code) {
-                            grunt.verbose.or.ok();
-                            callback();
-                        });
+                        // var cmd = 'pkill -9 cfprefsd';
+                        // grunt.verbose.writeln((cmd).magenta).or.write('Killing cfprefsd process for Mac 10.9 and higher');
+                        // exec(cmd, function(error, result, code) {
+                        //     grunt.verbose.or.ok();
+                        //     callback();
+                        // });
                      }
                      else {
                       callback(error, result);
