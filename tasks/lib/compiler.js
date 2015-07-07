@@ -256,23 +256,7 @@ module.exports = function(grunt) {
                   grunt.fatal(error);
                 } else
                     grunt.verbose.or.ok();
-                // note for macUSER
-                // Special notes for Mac 10.9 and higher
-                //
-                //Staring with Mac 10.9, Apple introduced a caching mechanism for plist files.
-                //Your modifications to plist files does not take effect until the cache gets updated
-                //(on a periodic basis, you cannot know
-                //exactly when the update will happen). To make sure your modifications take effect, there are two methods.
-                //
-                // - Kill cfprefsd process. It will restart automatically. Then the update takes effect.
-                // - Restart your Mac, or log out the current user and re-log in.
-                if (global.IS_MAC && true) {
-                  // var cmd = 'pkill -9 cfprefsd';
-                  // grunt.verbose.writeln((cmd).magenta).or.write('Killing cfprefsd process for Mac 10.9 and higher');
-                  // exec(cmd, function(error, result, code) {
-                  //     grunt.verbose.or.ok();
-                  //     callback();
-                  // });
+                    callback();
                 } else {
                   callback(error, result);
                 }
