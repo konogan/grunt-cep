@@ -254,11 +254,13 @@ module.exports = function(grunt) {
                 if (code !== 0) {
                   grunt.verbose.or.ok();
                   grunt.fatal(error);
-                } else
-                    grunt.verbose.or.ok();
-                    callback();
                 } else {
-                  callback(error, result);
+                  grunt.verbose.or.ok();
+                  if (global.IS_MAC && true) {
+                    callback();
+                  } else {
+                    callback(error, result);
+                  }
                 }
               });
               spawned.stdout.on('data', function(data) { grunt.verbose.writeln(data); });
